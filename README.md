@@ -1,11 +1,12 @@
-# doarti_trainee
+# Pet Vaccination App
 
-A new Flutter project.
+### With the Pet Vaccination app you can register your pets and track their vaccinations.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
+## Techs :rocket:
+ - [Firebase](https://firebase.google.com) - Back-end
+ - [Flutter](https://flutter.dev/?gclid=EAIaIQobChMIk43RwrSO6gIVhgeRCh3GHQ0qEAAYASAAEgJ_1vD_BwE&gclsrc=aw.ds) - Front-end
+ 
+## More about Flutter
 A few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
