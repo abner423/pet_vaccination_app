@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:doarti_trainee/PetDetails.dart';
-import 'package:doarti_trainee/repository/DataRepository.dart';
-import 'package:doarti_trainee/utils/pet_icons.dart';
+import 'package:pet_vaccination/PetDetails.dart';
+import 'package:pet_vaccination/repository/DataRepository.dart';
+import 'package:pet_vaccination/utils/pet_icons.dart';
 
 import 'models/pet.dart';
 
@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Pet Medical Central',
+        title: 'Pet Vaccination',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.green,
         ),
         home: HomeList());
   }
@@ -45,7 +45,6 @@ class _HomeListState extends State<HomeList> {
           stream: repository.getStream(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) return LinearProgressIndicator();
-
             return _buildList(context, snapshot.data.documents);
           }),
       floatingActionButton: FloatingActionButton(
@@ -96,7 +95,6 @@ class _HomeListState extends State<HomeList> {
     if (pet == null) {
       return Container();
     }
-
     return Container(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: InkWell(
@@ -113,7 +111,7 @@ class _HomeListState extends State<HomeList> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => PetDetails(pet),
+                    builder: (context) => PetDetails(pet, repository),
                   ));
             }
 

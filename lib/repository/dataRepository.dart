@@ -1,4 +1,4 @@
-import 'package:doarti_trainee/models/pet.dart';
+import 'package:pet_vaccination/models/pet.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DataRepository {

@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:doarti_trainee/models/vaccionation.dart';
+import 'package:pet_vaccination/models/vaccionation.dart';
 
 class Pet {
   String name;

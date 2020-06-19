@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "379012806466",
-    "firebase_url": "https://doarti-trainee-9538c.firebaseio.com",
-    "project_id": "doarti-trainee-9538c",
-    "storage_bucket": "doarti-trainee-9538c.appspot.com"
+    "project_number": "958414900931",
+    "firebase_url": "https://pet-vaccination.firebaseio.com",
+    "project_id": "pet-vaccination",
+    "storage_bucket": "pet-vaccination.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:379012806466:android:2a30ea4cd9b1a1ae97fadb",
+        "mobilesdk_app_id": "1:958414900931:android:d99ffe896913ff798c5c76",
         "android_client_info": {
-          "package_name": "com.example.doarti_trainee"
+          "package_name": "com.byronkamal.pet_vaccination"
         }
       },
       "oauth_client": [
         {
-          "client_id": "379012806466-84r5fgp06oibu039s7er30762kk51u70.apps.googleusercontent.com",
+          "client_id": "958414900931-m9dc9q40vohi1ovn0dkquifmn1l4kj5n.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAapXMZzw_0DJ9jFCvLMVnnudRU9dQ1IVc"
+          "current_key": "AIzaSyC5r6EKKpBnRnQt7wXWyGR0Hr5si0PiA9A"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "379012806466-84r5fgp06oibu039s7er30762kk51u70.apps.googleusercontent.com",
+              "client_id": "958414900931-m9dc9q40vohi1ovn0dkquifmn1l4kj5n.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

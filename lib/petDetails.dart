@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:intl/intl.dart';
-import 'package:doarti_trainee/repository/DataRepository.dart';
-import 'package:doarti_trainee/utils/constants.dart';
+import 'package:pet_vaccination/repository/DataRepository.dart';
+import 'package:pet_vaccination/utils/constants.dart';
 
 import 'models/pet.dart';
 import 'models/vaccionation.dart';
@@ -11,8 +11,9 @@ typedef DialogCallback = void Function();
 
 class PetDetails extends StatelessWidget {
   final Pet pet;
+  final DataRepository repository;
 
-  const PetDetails(this.pet);
+  const PetDetails(this.pet, this.repository);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class PetDetails extends StatelessWidget {
                 Navigator.pop(context);
               }),
         ),
-        body: PetDetailForm(pet),
+        body: PetDetailForm(pet, repository),
       ),
     );
   }
@@ -34,20 +35,23 @@ class PetDetails extends StatelessWidget {
 
 class PetDetailForm extends StatefulWidget {
   final Pet pet;
+  final DataRepository repository;
 
-  const PetDetailForm(this.pet);
+  const PetDetailForm(this.pet, this.repository);
 
   @override
-  _PetDetailFormState createState() => _PetDetailFormState();
+  _PetDetailFormState createState() => _PetDetailFormState(repository);
 }
 
 class _PetDetailFormState extends State<PetDetailForm> {
-  final DataRepository repository = DataRepository();
   final _formKey = GlobalKey<FormBuilderState>();
   final dateFormat = DateFormat('yyyy-MM-dd');
   String name;
   String type;
   String notes;
+  DataRepository repository;
+
+  _PetDetailFormState(this.repository);
 
   @override
   void initState() {
@@ -177,14 +181,12 @@ class _PetDetailFormState extends State<PetDetailForm> {
                     color: Colors.blue.shade600,
                     onPressed: () async {
                       if (_formKey.currentState.validate()) {
-                        if (_formKey.currentState.validate()) {
-                          Navigator.of(context).pop();
-                          widget.pet.name = name;
-                          widget.pet.type = type;
-                          widget.pet.notes = notes;
-
-                          repository.updatePet(widget.pet);
-                        }
+                        Navigator.of(context).pop();
+                        widget.pet.name = name == null ? widget.pet.name : name;
+                        widget.pet.type = type;
+                        widget.pet.notes =
+                            notes == null ? widget.pet.notes : notes;
+                        repository.updatePet(widget.pet);
                       }
                     },
                     child: Text(

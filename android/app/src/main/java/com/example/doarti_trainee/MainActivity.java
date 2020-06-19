@@ -1,4 +1,4 @@
-package com.example.doarti_trainee;
+package com.byronkamal.pet_vaccination;
 
 import io.flutter.embedding.android.FlutterActivity;
 
